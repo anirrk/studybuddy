@@ -15,7 +15,7 @@
   "browser_action": {
       "default_icon": "icons/icon_128.png", // optional
       "default_title": "Study Buddy",      // optional; shown in tooltip
-      "default_popup": "popup.html"        // optional
+      "default_popup": "/SBInterface/index.html"        // optional
     },
 
   // Optional
