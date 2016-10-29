@@ -1,0 +1,22 @@
+body {
+	font-family: "Arial";
+}
+
+
+
+.head {
+	background-color: #25CD99;
+	padding: 5px 0px 3px 20px;
+	color: white;
+	font-size: 12px;
+}
+
+.inputs {
+	color: black;
+	padding-left: 20px;
+	font-size: 14px;
+}
+
+#start {
+	align: right;
+}
