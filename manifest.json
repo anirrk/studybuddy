@@ -25,7 +25,7 @@
   "chrome_ui_overrides": {
     "bookmarks_ui": {
       "remove_bookmark_shortcut": true,
-      "remove_button": true
+      "remove_button": true 
     }
   },
   "chrome_url_overrides": {...},
