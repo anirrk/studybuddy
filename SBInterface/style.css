@@ -27,6 +27,7 @@ body {
 	padding: 5px;
 	background-color: #d0d8d5;
 	display: inline-block;
+	border-radius: 2px;
 }
 
 .startButton {
