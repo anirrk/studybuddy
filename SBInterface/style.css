@@ -1,5 +1,8 @@
 body {
 	font-family: "Arial";
+	width: 400px;
+	height: 500px;
+	margin: 0;
 }
 
 
@@ -15,8 +18,28 @@ body {
 	color: black;
 	padding-left: 20px;
 	font-size: 14px;
+
 }
 
-#start {
-	align: right;
+
+.button {
+	font-size: 12px;
+	padding: 5px;
+	background-color: #d0d8d5;
+	display: inline-block;
 }
+
+.startButton {
+	padding: 20px 20px 0px 0px;
+	text-align: right;
+}
+
+span {
+	display:inline-block;
+	padding-top: 20px;
+}
+
+button{
+	display:inline-block;
+}
+
