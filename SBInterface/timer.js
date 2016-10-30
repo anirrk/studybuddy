@@ -10,3 +10,5 @@ enterButton.addEventListener('click', function() {
 	inputtedCTimeHours = document.getElementById("chillInputHours").value;
 	inputtedCTimeMinutes = document.getElementById("chillInputMins").value;
 });
+
+localStorage.setItem('favoriteflavor','vanilla');
