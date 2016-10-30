@@ -1,7 +1,7 @@
 body {
 	font-family: "Arial";
 	width: 375px;
-	height: 500px;
+	height: 400px;
 	margin: 0;
 }
 
@@ -31,7 +31,17 @@ body {
 	color: black;
 	padding-left: 20px;
 	font-size: 14px;
+}
 
+input[type=text] {
+	width: 60px;
+	height: 60px;
+	border-radius: 3px;
+	border-color: blue;
+}
+
+input[type=text]:focus {
+	outline: none;
 }
 
 
@@ -58,4 +68,10 @@ span {
 	padding-top: 20px;
 	font-weight: bold;
 }
+
+.bottom {
+	margin: 20px;
+}
+
+
 
