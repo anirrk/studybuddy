@@ -35,13 +35,12 @@ span {
 
 .timerStudy {
 	padding-left: 40px;
-	padding-top: 10px;
 	font-size: 40px;
+	padding-bottom: 20px;
 }
 
 .timerChill {
 	padding-left: 40px;
-	padding-top: 10px;
 	font-size: 40px;
 }
 
@@ -51,3 +50,16 @@ span {
 	color: #8f9b95;
 	font-size: 13px;
 }
+
+.remaining {
+	font-size: 13px;
+	padding-left: 0px;
+	color: #25CD99;
+}
+
+hr {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+
