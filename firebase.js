@@ -9,12 +9,12 @@ var text = document.getElementById("banned_url");
 function insert(){
 	//alert("insert works");
 	for (var i = 0; i < list.length; i++){
-		if (document.getElementById("banned_url").value == list[i]){
+		if (document.getElementById("banned_url").value === list[i]){
 			double = true;
 		}
 	}
-	if (document.getElementById("banned_url").value.indexOf('.') != -1 &&
-		double == false){
+	if (document.getElementById("banned_url").value.indexOf('.') !== -1 &&
+		double === false){
 		list.push(document.getElementById("banned_url").value);
 
 	}
