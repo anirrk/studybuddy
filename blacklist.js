@@ -1,7 +1,7 @@
 //var input = document.createElement("input");
 //input.type = "text";
 // var list = new Array(10);
-		var list = new Array(10);
+		var list = new Array();
 		var text = document.getElementById('banned_url').value;
 		function insert(){
 			//alert("insert works");
