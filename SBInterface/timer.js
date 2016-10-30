@@ -26,3 +26,5 @@ enterButton.addEventListener('click', function() {
 
 
 localStorage.setItem(Hours, inputtedSTimeHours);
+
+});
