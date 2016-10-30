@@ -4,5 +4,5 @@ var firebaseRef = firebase.database().ref();
 
 insert_button.addEventListener('click',function(){
 	var value = blacklist_input.value;
-	firebaseRef.child("blacklist").set(value);
+	firebaseRef.child("blacklist").push().set(value);
 });
