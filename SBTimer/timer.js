@@ -1,7 +1,18 @@
 var Hours = 5;
 var Minutes = 0;
 
-var taste = localStorage.getItem('favoriteflavor');
+var StudyHours = 5;
+var StudyMinutes = 0;
+var firebaseRef = firebase.database().ref();
+
+firebaseRef.on("value", function(snapshot) {
+    firebase.Ref.child("storage").once("value", function(xsnapshot) {
+        var data = xsnapshot.val();
+        var name = data["CTimeHours"];
+        console.log(name);
+    });
+});
+console.log(StudyHours);
 
 function convertTime() {
 	return Hours * 60 * 60 + Minutes * 60;
