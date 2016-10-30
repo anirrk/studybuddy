@@ -2,6 +2,20 @@
 <html>
 
 	<body>
+		
+
+		<h1> BLACKLIST </h1>
+
+		<!-- <form> -->
+		<input type="text" id="banned_url">
+
+		<button onclick = "insert()" id="insert_button" value = "">
+		+ </button> <!-- INSERT BUTTON -->
+
+		<button onclick = "remove()" id="remove_button" value = "">
+		- </button> <!-- DELETE BUTTON -->
+
+		<p id="showList"></p>
 		<script>
 		var list = new Array();
 		var text = document.getElementById("banned_url");
@@ -12,6 +26,8 @@
 
 			//}
 			showUrl();
+			document.getElementById("banned_url").value = "";
+			document.getElementById("banned_url").innerHTML = "";
 		}
 
 		function remove(){
@@ -25,22 +41,11 @@
 
 		function showUrl(){
 			document.getElementById("showList").innerHTML = list.toString();
+			for (i = 0; i < list.length; i++){
+					document.write(list[i] + "<br >");
+			}
 		}
 		</script>
-
-		<h1> BLACKLIST </h1>
-
-		<!-- <form> -->
-		<input type="text" id="banned_url">
-
-		<button onclick = "insert()" id="insert_button">
-		+ </button> <!-- INSERT BUTTON -->
-
-		<button onclick = "remove()" id="remove_button">
-		- </button> <!-- DELETE BUTTON -->
-
-		<p id="showList"></p>
-
 
 		<!-- </form> -->
 

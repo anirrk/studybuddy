@@ -10,6 +10,7 @@
 
 			}
 			showUrl();
+			document.getElementById("insert_button").value = "";
 		}
 
 		function remove(){
