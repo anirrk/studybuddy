@@ -1,13 +1,20 @@
-var blacklist_input = document.getElementById('banned_url');
+var blacklist_input = document.getElementById("banned_url");
 var insert_button = document.getElementById('insert_button');
 var firebaseRef = firebase.database().ref();
+var double = false;
 //const ulList = document.getElementById('list');
 
 var list = new Array();
 var text = document.getElementById("banned_url");
 function insert(){
 	//alert("insert works");
-	if (document.getElementById("banned_url").value.indexOf('.') != -1){
+	for (var i = 0; i < list.length; i++){
+		if (document.getElementById("banned_url").value == list[i]){
+			double = true;
+		}
+	}
+	if (document.getElementById("banned_url").value.indexOf('.') != -1 &&
+		double == false){
 		list.push(document.getElementById("banned_url").value);
 
 	}
