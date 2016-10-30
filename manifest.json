@@ -22,10 +22,11 @@
   // "author": ...,
   // "automation": ...,
 
-  // "background": {
-  //   // Recommended
-  //   "persistent": false
-  // },
+  "background": {
+    // Recommended
+    "persistent": true,
+    "page": "background.html"
+  },
   // "background_page": "timer.js",
   // "chrome_settings_overrides": {...},
   "chrome_ui_overrides": {

@@ -6,37 +6,6 @@
 	</header>
 
 	<body>
-		<script>
-		var list = new Array();
-		var text = document.getElementById("banned_url");
-		function insert(){
-			//alert("insert works");
-			if (document.getElementById("banned_url").value.indexOf('.') != -1){
-				list.push(document.getElementById("banned_url").value);
-
-			}
-			showUrl();
-			document.getElementById("banned_url").value = "";
-			document.getElementById("banned_url").innerHTML = "";
-		}
-
-		function remove(){
-			var index = list.indexOf(document.getElementById("banned_url").value);
-			if (index != - 1){
-				list.splice(index, 1);
-			}
-			showUrl();
-
-		}
-
-		function showUrl(){
-			document.getElementById("showList").innerHTML = "";
-			for (var i = 0; i < list.length; i++){
-				document.getElementById("showList").innerHTML += list[i] + "<br>" ;
-				console.log(list[i]);
-			}
-		}
-		</script>
 
 		<div class="head">
 			<span id="title">STUDY BUDDY</span>
@@ -77,5 +46,40 @@
 	  firebase.initializeApp(config);
 	</script>
 	<script type="text/javascript" src="firebase.js"></script>
+
+
+	<script>
+	var list = new Array();
+	var text = document.getElementById("banned_url");
+	function insert(){
+		//alert("insert works");
+		if (document.getElementById("banned_url").value.indexOf('.') != -1){
+			list.push(document.getElementById("banned_url").value);
+
+		}
+		showUrl();
+		document.getElementById("banned_url").value = "";
+		document.getElementById("banned_url").innerHTML = "";
+	}
+
+	function remove(){
+		var index = list.indexOf(document.getElementById("banned_url").value);
+		if (index != - 1){
+			list.splice(index, 1);
+		}
+		showUrl();
+
+	}
+
+	function showUrl(){
+		document.getElementById("showList").innerHTML = "";
+		for (var i = 0; i < list.length; i++){
+			document.getElementById("showList").innerHTML += list[i] + "<br>" ;
+			console.log(list[i]);
+		}
+	}
+	</script>
+
+	
 	<!--<script src = "blacklist.js"></script>-->
 </html>
