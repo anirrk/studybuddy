@@ -19,13 +19,4 @@ enterButton.addEventListener('click', function() {
 	  CTimeMinutes : inputtedCTimeMinutes
 	})
 
-if(inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || 
-	inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || 
-	inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || 
-	inputtedSTimeHours != 1) {
-	
-}
-
-// localStorage.setItem(Hours, inputtedSTimeHours);
-
 });
