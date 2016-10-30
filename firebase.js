@@ -20,6 +20,8 @@ var double = false;
 
 var list = new Array();
 var text = document.getElementById("banned_url");
+showUrl();
+
 
 insert_button.addEventListener('click',function(){
 
