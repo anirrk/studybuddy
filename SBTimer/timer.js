@@ -98,14 +98,8 @@ chrome.extension.onMessage.addListener(function(message, messageSender, sendResp
 	}
 });
 
-firebaseRef_storage.on("value", function(snapshot) {
-	StudyHours = parseInt(snapshot.child("STimeHours").val());
-	StudyMinutes = parseInt(snapshot.child("STimeMinutes").val());
-	ChillHours = parseInt(snapshot.child("CTimeHours").val());
-	ChillMinutes = parseInt(snapshot.child("CTimeMinutes").val());
-
-	var timeStudy = StudyHours * 60 * 60 + StudyMinutes * 60;
-	var timeChill = ChillHours * 60 * 60 + ChillMinutes * 60;
+	var timeStudy = getCookie("ST");
+	var timeChill = getCookie("CT");
 
 	function initializeClockStudy() {
 		var interval = setInterval(function() {
@@ -117,7 +111,7 @@ firebaseRef_storage.on("value", function(snapshot) {
 			if(minutes < 10) {
 				minutes = ('0' + minutes).slice(-2);
 			}
-			var hours = Math.floor((((timeStudy/60)/60 % 24)));
+			var hours = Math.floor((((timeStudy/60)/60)) / 10);
 			if(hours < 10) {
 				hours = ('0' + hours).slice(-2);
 			}
@@ -143,7 +137,7 @@ firebaseRef_storage.on("value", function(snapshot) {
 			if(minutes < 10) {
 				minutes = ('0' + minutes).slice(-2);
 			}
-			var hours = Math.floor((((timeChill/60)/60 % 24)));
+			var hours = Math.floor((((timeChill/60)/60 / 10)));
 			if(hours < 10) {
 				hours = ('0' + hours).slice(-2);
 			}
@@ -167,5 +161,4 @@ firebaseRef_storage.on("value", function(snapshot) {
 	initializeClockStudy();
 	initializeClockChill();
 
-});
 

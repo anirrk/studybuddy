@@ -61,15 +61,15 @@ enterButton.addEventListener('click', function() {
 	inputtedCTimeMinutes = document.getElementById("chillInputMins").value;
 
 	setCookie("ST", convertTime(inputtedSTimeHours, inputtedSTimeMinutes).toString(), 1);
-	setCookie("CT", convertTime(inputtedCTimeHours, inputtedCTimeMinutes) + "", 1);
+	setCookie("CT", convertTime(inputtedCTimeHours, inputtedCTimeMinutes).toString(), 1);
 	
 
-	firebaseRef.child("storage").set({
+	/*firebaseRef.child("storage").set({
 	  STimeHours: inputtedSTimeHours,
 	  STimeMinutes: inputtedSTimeMinutes,
 	  CTimeHours : inputtedCTimeHours,
 	  CTimeMinutes : inputtedCTimeMinutes
-	});
+	});*/
 
 });
 
