@@ -21,8 +21,8 @@
 		}
 
 		function remove(){
-			var index = list.indexOf(text);
-			if (index > - 1){
+			var index = list.indexOf(document.getElementById("banned_url").value);
+			if (index != - 1){
 				list.splice(index, 1);
 			}
 			showUrl();
