@@ -1,7 +1,7 @@
 body {
 	font-family: "Arial";
 	width: 375px;
-	height: 500px;
+	height: 400px;
 	margin: 0;
 }
 
@@ -34,6 +34,10 @@ body {
 
 }
 
+input[type=text]:focus {
+	outline: none;
+}
+
 
 .button {
 	font-size: 12px;
@@ -58,4 +62,10 @@ span {
 	padding-top: 20px;
 	font-weight: bold;
 }
+
+.bottom {
+	margin: 20px;
+}
+
+
 
