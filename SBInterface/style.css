@@ -113,7 +113,8 @@ span {
 hr
 {
 	margin-top: 20px;
-	margin-left: 10px;
+	width: 300px;
+	margin-left: 20px;
 }
 
 #lets {
