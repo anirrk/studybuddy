@@ -64,7 +64,11 @@ input[type=text]:focus {
 	display: inline-block;
 	border-radius: 2px;
 	cursor: pointer;
-	margin-left: 260px;
+	margin-left: 230px;
+	text-decoration: none;
+	color: black;
+	width: 80px;
+	font-weight: bold;
 }
 
 .button:hover {
@@ -107,20 +111,5 @@ hr
 	color: white;
 }
 
-.buttonB {
-	font-size: 18px;
-	padding: 7px 10px 7px 10px;
-	background-color: #d0d8d5;
-	display: inline-block;
-	border-radius: 2px;
-	cursor: pointer;
-
-}
-
-.buttonB:hover {
-	padding: 7px 13px 7px 13px;
-	transition: 0.5s;
-	background-color: #25CD99;
-}
 
 
