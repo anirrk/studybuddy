@@ -76,6 +76,7 @@ firebaseRef.on("value", function(snapshot) {
 				minutes = 0;
 				hours = 0;
 			}
+			// INSERT FIREBASE LIST OF BLACKLISTED URLS HERE TO BE CROSS-REFERENCED
 			if(0) {
 				timeChill--;
 			}
