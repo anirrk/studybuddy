@@ -14,6 +14,9 @@ var StudyMinutes;
 var ChillHours;
 var ChillMinutes;
 
+var gif = (Math.floor(Math.random() * 10));
+gif = "../gifs/finished/" + gif + ".gif";
+
 var firebaseRef = firebase.database().ref().child("storage");
 
 firebaseRef.on("value", function(snapshot) {
@@ -26,7 +29,6 @@ firebaseRef.on("value", function(snapshot) {
 
 	function initializeClock() {
 		var interval = setInterval(function() {
-			time--;
 			var seconds = Math.floor((time % 60));
 			if(seconds < 10) {
 				seconds = ('0' + seconds).slice(-2);
@@ -39,12 +41,15 @@ firebaseRef.on("value", function(snapshot) {
 			if(hours < 10) {
 				hours = ('0' + hours).slice(-2);
 			}
-			var gif = (Math.floor(Math.random() * 10));
 			document.getElementById("clock").innerHTML = hours + ':' + minutes + ':' + seconds;
 			if(time <= 0) {
-				window.open("../gifs/finished/" + parseString(gif);
+				window.open(gif);
 				clearInterval(interval);
+				seconds = 0;
+				minutes = 0;
+				hours = 0;
 			}
+			time--;
 		}, 1000);
 	}
 
