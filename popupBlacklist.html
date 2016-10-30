@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html>
-<body>
 
-<h1> BLACKLIST </h1>
+	<body>
 
-<script src = "blacklist.js">
-</script>
+		<h1> BLACKLIST </h1>
+		<script>
+		var list = new Array(10);
+		function insert(){
+			//alert("insert works");
 
-<input type="text" name="BANNED URL" value="">
+			list.push(document.getElementById('banned_url').value);
+			showUrl();
+		}
 
-<button type = "button"
-onclick = "insert()">
-+ </button> <!-- INSERT BUTTON -->
+		function remove(){
+			var index = list.indexOf("banned_url");
+			if (index > - 1){
+				list.splice(index, 1);
+			}
+			showUrl();
 
-<button type = "button"
-onclick = "remove()">
-- </button> <!-- DELETE BUTTON -->
+		}
 
-<p id="showList"></p>
+		function showUrl(){
+			document.getElementById("showList").innerHTML = list.toString();
+		}
+		</script>
+
+		<!-- <form> -->
+		<input type="text" id="banned_url">
+
+		<button onclick = "insert()">
+		+ </button> <!-- INSERT BUTTON -->
+
+		<button onclick = "remove()">
+		- </button> <!-- DELETE BUTTON -->
+
+		<p id="showList"></p>
 
 
+		<!-- </form> -->
 
-</body>
+	</body>
+
 </html>
