@@ -7,11 +7,9 @@
 
 	<body>
 		<script>
-<<<<<<< HEAD
 		var list = new Array();
-=======
-		var list = new Array(10);
->>>>>>> origin/master
+
+
 		var text = document.getElementById("banned_url");
 		function insert(){
 			//alert("insert works");
@@ -35,7 +33,6 @@
 			document.getElementById("showList").innerHTML = list.toString();
 		}
 		</script>
-<<<<<<< HEAD
 
 		<div class="head">
 			<span id="title">STUDY BUDDY</span>
@@ -45,28 +42,16 @@
 		<div class="body">
 
 			<h3> BLACKLIST </h3>
-=======
->>>>>>> origin/master
 
 			<!-- <form> -->
 			<input type="text" id="banned_url">
 
-<<<<<<< HEAD
-			<button onclick = "insert()">
+
+			<button onclick = "insert()" id="insert_button">
 			+ </button> <!-- INSERT BUTTON -->
 
-<<<<<<< HEAD
-			<button onclick = "remove()">
+			<button onclick = "remove()" id="remove_button">
 			- </button> <!-- DELETE BUTTON -->
-=======
-=======
->>>>>>> origin/master
-		<button onclick = "insert()" id="insert_button">
-		+ </button> <!-- INSERT BUTTON -->
-
-		<button onclick = "remove()" id="remove_button">
-		- </button> <!-- DELETE BUTTON -->
->>>>>>> origin/master
 
 			<p id="showList"></p>
 
