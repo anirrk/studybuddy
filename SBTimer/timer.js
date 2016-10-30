@@ -43,27 +43,27 @@ firebaseRef_storage.on("value", function(snapshot) {
 
 	function initializeClockStudy() {
 		var interval = setInterval(function() {
-			var seconds = Math.floor((timeStudy % 60));
-			if(seconds < 10) {
-				seconds = ('0' + seconds).slice(-2);
-			}
-			var minutes = Math.floor(((timeStudy/60) % 60));
-			if(minutes < 10) {
-				minutes = ('0' + minutes).slice(-2);
-			}
-			var hours = Math.floor((((timeStudy/60)/60 % 24)));
-			if(hours < 10) {
-				hours = ('0' + hours).slice(-2);
-			}
-			document.getElementById("clockStudy").innerHTML = hours + ':' + minutes + ':' + seconds;
-			if(timeStudy <= 0) {
-				window.open(gif);
-				clearInterval(interval);
-				seconds = 0;
-				minutes = 0;
-				hours = 0;
-			}
-			timeStudy--;
+			// var seconds = Math.floor((timeStudy % 60));
+			// if(seconds < 10) {
+			// 	seconds = ('0' + seconds).slice(-2);
+			// }
+			// var minutes = Math.floor(((timeStudy/60) % 60));
+			// if(minutes < 10) {
+			// 	minutes = ('0' + minutes).slice(-2);
+			// }
+			// var hours = Math.floor((((timeStudy/60)/60 % 24)));
+			// if(hours < 10) {
+			// 	hours = ('0' + hours).slice(-2);
+			// }
+			// document.getElementById("clockStudy").innerHTML = hours + ':' + minutes + ':' + seconds;
+			// if(timeStudy <= 0) {
+			// 	window.open(gif);
+			// 	clearInterval(interval);
+			// 	seconds = 0;
+			// 	minutes = 0;
+			// 	hours = 0;
+			// }
+			// timeStudy--;
 		}, 1000);
 	}
 
@@ -98,6 +98,29 @@ firebaseRef_storage.on("value", function(snapshot) {
 		}, 1000);
 	}
 
+	chrome.extension.onMessage.addListener(function(message, messageSender, sendResponse) {
+    	var seconds = Math.floor((timeStudy % 60));
+    	if(seconds < 10) {
+    		seconds = ('0' + seconds).slice(-2);
+    	}
+    	var minutes = Math.floor(((timeStudy/60) % 60));
+    	if(minutes < 10) {
+    		minutes = ('0' + minutes).slice(-2);
+    	}
+    	var hours = Math.floor((((timeStudy/60)/60 % 24)));
+    	if(hours < 10) {
+    		hours = ('0' + hours).slice(-2);
+    	}
+    	document.getElementById("clockStudy").innerHTML = hours + ':' + minutes + ':' + seconds;
+    	if(timeStudy <= 0) {
+    		window.open(gif);
+    		clearInterval(interval);
+    		seconds = 0;
+    		minutes = 0;
+    		hours = 0;
+    	}
+    	timeStudy--;
+	});
 	initializeClockStudy();
 	initializeClockChill();
 
