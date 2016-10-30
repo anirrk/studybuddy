@@ -17,12 +17,18 @@ enterButton.addEventListener('click', function() {
 	  STimeMinutes: inputtedSTimeMinutes,
 	  CTimeHours : inputtedCTimeHours,
 	  CTimeMinutes : inputtedCTimeMinutes
-	});
+	})
 
 
 });
 
 
+if(inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || 
+	inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || 
+	inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || inputtedSTimeHours != 1 || 
+	inputtedSTimeHours != 1) {
+	
+}
 
 
 localStorage.setItem(Hours, inputtedSTimeHours);
