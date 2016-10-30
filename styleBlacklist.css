@@ -1,6 +1,6 @@
 body {
 	font-family: "Avenir";
-	width: 375px;
+	width: 350px;
 	height: 350px;
 	margin: 0;
 }
@@ -37,3 +37,47 @@ span {
 .body {
 	margin-left: 20px;
 }
+
+p {
+	font-size: 14px;
+}
+
+input[type=text] {
+	width: 230px;
+	height: 20px;
+	border-radius: 3px;
+	border: 1px solid #d0d8d5;
+	font-size: 14px;
+	text-align: left;
+	padding:2px 0px 2px 10px;
+}
+
+input[type=text]:focus {
+	outline: none;
+}
+
+button {
+	height: 28px;
+	width: 30px;
+	font-size: 18px;
+	border-radius: 2px;
+	border: none;
+	color: white;
+	background-color: #d0d8d5;
+}
+
+button:hover {
+	background-color:#25CD99;
+	outline: none;
+	transition: .4s;
+}
+
+button:focus {
+	outline: none;
+}
+
+button:active {
+	background-color: black;
+}
+
+
