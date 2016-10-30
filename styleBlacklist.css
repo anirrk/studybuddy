@@ -88,7 +88,8 @@ button:active {
 	border-radius: 2px;
 	cursor: pointer;
 	margin-left: 260px;
-	margin-top: 20px;
+	text-decoration: none;
+	color: black;
 }
 
 .button:hover {
