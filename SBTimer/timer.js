@@ -1,14 +1,8 @@
-var inputtedTime;
-
-var studyButton = document.getElementById("studyButton");
-studyButton.addEventListener('click', function() {
-	inputtedTime = document.getElementById("studyInput").value;
-	alert(inputtedTime);
-});
+var Hours = 5;
+var Minutes = 0;
 
 function convertTime() {
-	var splitTime = inputtedTime.split(':');
-	return (+splitTime[0]) * 60 * 60 + (+splitTime[1]) * 60 + (+splitTime[2]);
+	return Hours * 60 * 60 + Minutes * 60;
 }
 
 var time = convertTime();
