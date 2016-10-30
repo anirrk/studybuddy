@@ -1,16 +1,14 @@
-var inputtedTimeHours;
-var inputtedTimeMinutes;
+var inputtedSTimeHours;
+var inputtedSTimeMinutes;
+var inputtedCTimeHours;
+var inputtedCTimeMinutes;
 
-var studyButton = document.getElementById("studyButton");
-studyButton.addEventListener('click', function() {
-	inputtedTimeHours = document.getElementById("studyInputHours").value;
-	inputtedTimeMinutes = document.getElementById("studyInputMins").value;
+var enterButton = document.getElementById("enterButton");
+enterButton.addEventListener('click', function() {
+	inputtedSTimeHours = document.getElementById("studyInputHours").value;
+	inputtedSTimeMinutes = document.getElementById("studyInputMins").value;
+	inputtedCTimeHours = document.getElementById("chillInputHours").value;
+	inputtedCTimeMinutes = document.getElementById("chillInputMins").value;
 });
 
-
-/*var studyButton = document.getElementById("chillButton");
-studyButton.addEventListener('click', function() {
-	inputtedTimeHours = document.getElementById("chillInputHours").value;
-	inputtedTimeMinutes = document.getElementById("chillInputMins").value;
-});*/
-
+localStorage.setItem('favoriteflavor','vanilla');

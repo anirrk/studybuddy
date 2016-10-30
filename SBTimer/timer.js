@@ -1,6 +1,8 @@
 var Hours = 5;
 var Minutes = 0;
 
+var taste = localStorage.getItem('favoriteflavor');
+
 function convertTime() {
 	return Hours * 60 * 60 + Minutes * 60;
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //var input = document.createElement("input");
 //input.type = "text";
 // var list = new Array(10);
@@ -12,18 +13,21 @@
 			showUrl();
 			document.getElementById("insert_button").value = "";
 		}
+=======
+var input = document.createElement("input");
+input.type = "text";
+var list = new Array(10);
 
-		function remove(){
-			var index = list.indexOf(text);
-			if (index > - 1){
-				list.splice(index, 1);
-			}
-			showUrl();
+>>>>>>> origin/master
 
-		}
+function insert(){
+	list.push("input");
+}
 
-		function showUrl(){
-			document.getElementById("showList").innerHTML = list.toString();
-		}
+function delete(){
+	var index = list.indexOf("text");
+	if (index > - 1){
+		list.splice(index, 1);
+	}
 
-
+}
