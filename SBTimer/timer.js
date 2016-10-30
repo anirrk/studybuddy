@@ -1,3 +1,13 @@
+//initialize
+  var config = {
+    apiKey: "AIzaSyCtdpDh3QN2AAyDF1LDg7bn2XRWrJ0KMm0",
+    authDomain: "firstproject-e8124.firebaseapp.com",
+    databaseURL: "https://firstproject-e8124.firebaseio.com",
+    storageBucket: "firstproject-e8124.appspot.com",
+    messagingSenderId: "340933151333"
+  };
+  firebase.initializeApp(config);
+
 
 var StudyHours;
 var StudyMinutes;

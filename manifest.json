@@ -22,11 +22,11 @@
   // "author": ...,
   // "automation": ...,
 
-  "background": {
-    // Recommended
-    "persistent": true,
-    "page": "background.html"
-  },
+  // "background": {
+  //   // Recommended
+  //   "persistent": true,
+  //   "page": "background.html"
+  // },
   // "background_page": "timer.js",
   // "chrome_settings_overrides": {...},
   "chrome_ui_overrides": {
@@ -39,7 +39,7 @@
   // "commands": {...},
   // "content_capabilities": ...,
   // "content_scripts": [{...}],
-  "content_security_policy": "policyString",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.firebase.com https://*.firebaseio.com https://*.firebaseio.com https://www.gstatic.com; object-src 'self'; ",
   // "converted_from_user_script": ...,
   "current_locale": "en",
   "devtools_page": "devtools.html",
