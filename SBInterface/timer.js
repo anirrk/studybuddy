@@ -11,4 +11,4 @@ enterButton.addEventListener('click', function() {
 	inputtedCTimeMinutes = document.getElementById("chillInputMins").value;
 });
 
-storage.setItem(Hours, inputtedSTimeHours);
+localStorage.setItem(Hours, inputtedSTimeHours);

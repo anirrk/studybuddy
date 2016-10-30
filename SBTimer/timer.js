@@ -1,4 +1,4 @@
-var Hours = storage.getItem(Hours);
+var Hours = localStorage.getItem(Hours);
 var Minutes = 0;
 
 function convertTime() {
