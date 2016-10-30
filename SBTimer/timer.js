@@ -17,9 +17,22 @@ var ChillMinutes;
 var gif = (Math.floor(Math.random() * 10));
 gif = "../gifs/finished/" + gif + ".gif";
 
-var firebaseRef = firebase.database().ref().child("storage");
+var firebaseRef_storage = firebase.database().ref().child("storage");
+var firebaseRef_blacklist = firebase.database().ref().child("blacklist");
 
-firebaseRef.on("value", function(snapshot) {
+// INSERT FIREBASE LIST OF BLACKLISTED URLS HERE TO BE CROSS-REFERENCED
+var userDict = {};    
+
+firebaseRef_blacklist.once("value", function(snapshot) {
+ 	userDict = snapshot.val();
+   	for(i=0;  i < Object.keys(userDict).length; i++){
+       	console.log(Object.keys(userDict)[i]);//<---returns list of unique URLS
+       	console.log(userDict[Object.keys(userDict)[i]]);
+    }
+});
+
+
+firebaseRef_storage.on("value", function(snapshot) {
 	StudyHours = parseInt(snapshot.child("STimeHours").val());
 	StudyMinutes = parseInt(snapshot.child("STimeMinutes").val());
 	ChillHours = parseInt(snapshot.child("CTimeHours").val());
@@ -76,7 +89,9 @@ firebaseRef.on("value", function(snapshot) {
 				minutes = 0;
 				hours = 0;
 			}
-			// INSERT FIREBASE LIST OF BLACKLISTED URLS HERE TO BE CROSS-REFERENCED
+
+
+
 			if(0) {
 				timeChill--;
 			}
