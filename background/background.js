@@ -55,3 +55,4 @@ chrome.extension.onMessage.addListener(function(message, messageSender, sendResp
 	}
 });
 
+};
