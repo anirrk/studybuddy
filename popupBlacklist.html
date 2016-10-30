@@ -4,31 +4,6 @@
 	<body>
 
 		<h1> BLACKLIST </h1>
-		<script>
-		var list = new Array(10);
-		var text = document.getElementById('banned_url').value
-		function insert(){
-			//alert("insert works");
-			if (text.indexOf(".") != -1){
-				list.push(document.getElementById('banned_url').value);
-
-			}
-			showUrl();
-		}
-
-		function remove(){
-			var index = list.indexOf(text);
-			if (index > - 1){
-				list.splice(index, 1);
-			}
-			showUrl();
-
-		}
-
-		function showUrl(){
-			document.getElementById("showList").innerHTML = list.toString();
-		}
-		</script>
 
 		<!-- <form> -->
 		<input type="text" id="banned_url">
@@ -58,5 +33,5 @@
 	  firebase.initializeApp(config);
 	</script>
 	<script type="text/javascript" src="firebase.js"></script>
-
+	<script src = "blacklist.js"></script>
 </html>

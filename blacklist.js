@@ -1,26 +1,28 @@
 //var input = document.createElement("input");
 //input.type = "text";
 // var list = new Array(10);
-alert("Asdf");
+		var list = new Array(10);
+		var text = document.getElementById('banned_url').value;
+		function insert(){
+			//alert("insert works");
+			if (text.indexOf(".") != -1){
+				list.push(document.getElementById('banned_url').value);
 
-function insert(){
-	list.push(document.getElementById('banned_url').value);
-	showUrl();
-	displayDate();
-	alert("insert works");
-}
+			}
+			showUrl();
+		}
 
-function delete(){
-	var index = list.indexOf("banned_url");
-	if (index > - 1){
-		list.splice(index, 1);
-	}
-	showUrl();
+		function remove(){
+			var index = list.indexOf(text);
+			if (index > - 1){
+				list.splice(index, 1);
+			}
+			showUrl();
 
-}
+		}
 
-function showUrl(){
-	document.getElementById("showList").innerHTML = list.toString();
-}
+		function showUrl(){
+			document.getElementById("showList").innerHTML = list.toString();
+		}
 
 
