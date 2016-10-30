@@ -16,30 +16,38 @@
 			<img align="right" class="logo" src="logo.png">
 		</div>
 
-		<div class="inputs">
+		<div class="inputsDiv">
 			<div class="studyTime">
 				<form action="demo_form.asp">
 					<div>
-						<span>Study for:</span>
-						<div>
-							<input id="studyInputHours" type="text">
+						<span class="text">STUDY FOR:</span>
+						<div class="inputs">
+							<input id="studyInputHours" type="text" >
+							<span>:</span>
 							<input id="studyInputMins" type="text">
+							<h4>HOURS MINS</h4>
 						</div>
-						<span id="studyButton" class="button">Enter</span>
+
 					</div>
 
+					<hr></hr>
+
 					<div>
-						<span>Chill for:</span>
-						<div>
+						<span class="text">CHILL FOR:</span>
+						<div class="inputs">
 							<input id="chillInputHours" type="text">
+							<span>:</span>
 							<input id="chillInputMins" type="text">
+							<h4>HOURS MINS</h4>
 						</div>
-						<span id="chillButton" class="button">Enter</span>
+						<span id="enterButton" class="button">ENTER</span>
 					</div>
+
+					<hr></hr>
 
 					<h3>Blacklist:</h3>
 					<input id="blacklistInput" type="text">
-					<span id="blacklistAddButton" class="button">Add</span>
+					<span id="blacklistAddButton" class="button">ADD</span>
 					<div id="placeholder">
 					</div>
 

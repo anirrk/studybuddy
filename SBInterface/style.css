@@ -1,5 +1,5 @@
 body {
-	font-family: "Arial";
+	font-family: "Avenir";
 	width: 375px;
 	height: 400px;
 	margin: 0;
@@ -27,17 +27,29 @@ body {
 	padding-top: 3px;
 }
 
-.inputs {
+.inputsDiv {
 	color: black;
 	padding-left: 20px;
 	font-size: 14px;
+}
+
+.inputs {
+	padding-left: 100px;
+}
+
+h4 {
+	padding-left: 6px;
+	word-spacing: 26px;
+	color: #8f9b95;
 }
 
 input[type=text] {
 	width: 60px;
 	height: 60px;
 	border-radius: 3px;
-	border-color: #d0d8d5;
+	border: 1px solid #d0d8d5;
+	font-size: 36px;
+	text-align: center;
 }
 
 input[type=text]:focus {
@@ -46,17 +58,17 @@ input[type=text]:focus {
 
 
 .button {
-	font-size: 12px;
-	padding: 5px 10px 5px 10px;
+	font-size: 13px;
+	padding: 7px 10px 7px 10px;
 	background-color: #d0d8d5;
 	display: inline-block;
 	border-radius: 2px;
 	cursor: pointer;
-	margin-left: 10px;
+	margin-left: 260px;
 }
 
 .button:hover {
-	padding: 5px 13px 5px 13px;
+	padding: 7px 13px 7px 13px;
 	transition: 0.5s;
 	background-color: black;
 	color: white;
@@ -67,10 +79,21 @@ span {
 	display:inline-block;
 	padding-top: 20px;
 	font-weight: bold;
+	font-size: 16px;
+}
+
+.text {
+	padding-left: 122px;
+	padding-bottom: 20px;
 }
 
 .bottom {
 	margin: 20px;
+}
+
+hr
+{
+	margin-top: 20px;
 }
 
 
