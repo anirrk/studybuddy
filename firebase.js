@@ -90,7 +90,7 @@ function showUrl(){
 	
 }
 
-function showArray(){
+/*function showArray(){
 
 	for (var i = 0; i < childData.length; i++){
 		var item = document.createElement("li2");
@@ -98,7 +98,7 @@ function showArray(){
     	ulList2.appendChild(item);
 		
 	}
-}
+}*/
 
 function showUrlTemp(){
 	document.getElementById("showList").innerHTML = "";
