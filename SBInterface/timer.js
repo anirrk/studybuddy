@@ -63,6 +63,7 @@ enterButton.addEventListener('click', function() {
 	setCookie("ST", convertTime(inputtedSTimeHours, inputtedSTimeMinutes).toString(), 1);
 	setCookie("CT", convertTime(inputtedCTimeHours, inputtedCTimeMinutes) + "", 1);
 	
+
 	firebaseRef.child("storage").set({
 	  STimeHours: inputtedSTimeHours,
 	  STimeMinutes: inputtedSTimeMinutes,
