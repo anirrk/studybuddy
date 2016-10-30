@@ -49,12 +49,15 @@ function checkCookie() {
 }
 setCookie("flavor", "vanilla", 10);
 
-var extraButton = document.getElementById("extraButton");
-extraButton.addEventListener('click', function() {
+var enterButton = document.getElementById("enterButton");
+enterButton.addEventListener('click', function() {
 	inputtedSTimeHours = document.getElementById("studyInputHours").value;
 	inputtedSTimeMinutes = document.getElementById("studyInputMins").value;
 	inputtedCTimeHours = document.getElementById("chillInputHours").value;
 	inputtedCTimeMinutes = document.getElementById("chillInputMins").value;
+
+	setCookie("ST", convertTime(inputtedSTimeHours, inputtedSTimeMinutes).toString(), 1);
+	setCookie("CT", convertTime(inputtedCTimeHours, inputtedCTimeMinutes) + "", 1);
 	
 	firebaseRef.child("storage").set({
 	  STimeHours: inputtedSTimeHours,
@@ -68,11 +71,3 @@ extraButton.addEventListener('click', function() {
 function convertTime(Hours, Mins) {
 	return parseInt(Hours) * 36000 + parseInt(Mins) * 60;
 }
-
-document.getElementById('enterButton').addEventListener('click', function() {
-	setCookie("ST", convertTime(inputtedSTimeHours, inputtedSTimeMinutes).toString(), 1);
-	setCookie("CT", convertTime(inputtedCTimeHours, inputtedCTimeMinutes) + "", 1);
-});
-
-/*setCookie("ST", convertTime(inputtedSTimeHours, inputtedSTimeMinutes).toString(), 1);
-setCookie("CT", convertTime(inputtedCTimeHours, inputtedCTimeMinutes) + "", 1);*/
