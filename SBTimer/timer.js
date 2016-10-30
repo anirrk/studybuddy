@@ -1,4 +1,10 @@
-var inputtedTime = '01:20:00';
+var inputtedTime;
+
+var studyButton = document.getElementById("studyButton");
+studyButton.addEventListener('click', function() {
+	inputtedTime = document.getElementById("studyInput").value;
+	alert(inputtedTime);
+});
 
 function convertTime() {
 	var splitTime = inputtedTime.split(':');
