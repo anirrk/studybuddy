@@ -65,6 +65,7 @@ enterButton.addEventListener('click', function() {
 	  CTimeHours : inputtedCTimeHours,
 	  CTimeMinutes : inputtedCTimeMinutes
 	});
+    chrome.extension.sendMessage('trigger_background'); 
 
 });
 

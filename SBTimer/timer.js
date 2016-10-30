@@ -67,6 +67,39 @@ firebaseRef_blacklist.once("value", function(snapshot) {
     }
 });
 
+chrome.runtime.onMessage.addListener(function(message, messageSender, sendResponse) {
+
+	if(message == "update_time"){
+		var Stemp = getCookie("ST");
+		// var Ctemp = getCookie("CT");
+
+		var Stime = parseInt(Stemp);
+		// var Ctime = parseInt(Ctemp);
+		alert(Stime);
+		var seconds = Math.floor((Stime % 60));
+		if(seconds < 10) {
+			seconds = ('0' + seconds).slice(-2);
+		}
+		var minutes = Math.floor(((Stime/60) % 60));
+		if(minutes < 10) {
+			minutes = ('0' + minutes).slice(-2);
+		}
+		var hours = Math.floor((((Stime/60)/60 % 24)));
+		if(hours < 10) {
+			hours = ('0' + hours).slice(-2);
+		}
+		document.getElementById("clockStudy").innerHTML = hours + ':' + minutes + ':' + seconds;
+		if(Stime <= 0) {
+			window.open(gif);
+			clearInterval(interval);
+			seconds = 0;
+			minutes = 0;
+			hours = 0;
+		}
+	}
+});
+
+
 
 firebaseRef_storage.on("value", function(snapshot) {
 	StudyHours = parseInt(snapshot.child("STimeHours").val());
@@ -77,31 +110,31 @@ firebaseRef_storage.on("value", function(snapshot) {
 	var timeStudy = StudyHours * 60 * 60 + StudyMinutes * 60;
 	var timeChill = ChillHours * 60 * 60 + ChillMinutes * 60;
 
-	function initializeClockStudy() {
-		var interval = setInterval(function() {
-			var seconds = Math.floor((timeStudy % 60));
-			if(seconds < 10) {
-				seconds = ('0' + seconds).slice(-2);
-			}
-			var minutes = Math.floor(((timeStudy/60) % 60));
-			if(minutes < 10) {
-				minutes = ('0' + minutes).slice(-2);
-			}
-			var hours = Math.floor((((timeStudy/60)/60 % 24)));
-			if(hours < 10) {
-				hours = ('0' + hours).slice(-2);
-			}
-			document.getElementById("clockStudy").innerHTML = hours + ':' + minutes + ':' + seconds;
-			if(timeStudy <= 0) {
-				window.open(gif);
-				clearInterval(interval);
-				seconds = 0;
-				minutes = 0;
-				hours = 0;
-			}
-			timeStudy--;
-		}, 1000);
-	}
+	// function initializeClockStudy() {
+	// 	var interval = setInterval(function() {
+	// 		var seconds = Math.floor((timeStudy % 60));
+	// 		if(seconds < 10) {
+	// 			seconds = ('0' + seconds).slice(-2);
+	// 		}
+	// 		var minutes = Math.floor(((timeStudy/60) % 60));
+	// 		if(minutes < 10) {
+	// 			minutes = ('0' + minutes).slice(-2);
+	// 		}
+	// 		var hours = Math.floor((((timeStudy/60)/60 % 24)));
+	// 		if(hours < 10) {
+	// 			hours = ('0' + hours).slice(-2);
+	// 		}
+	// 		document.getElementById("clockStudy").innerHTML = hours + ':' + minutes + ':' + seconds;
+	// 		if(timeStudy <= 0) {
+	// 			window.open(gif);
+	// 			clearInterval(interval);
+	// 			seconds = 0;
+	// 			minutes = 0;
+	// 			hours = 0;
+	// 		}
+	// 		timeStudy--;
+	// 	}, 1000);
+	// }
 
 	function initializeClockChill() {
 		var interval = setInterval(function() {
@@ -134,7 +167,7 @@ firebaseRef_storage.on("value", function(snapshot) {
 		}, 1000);
 	}
 
-	initializeClockStudy();
+	// initializeClockStudy();
 	initializeClockChill();
 
 });
