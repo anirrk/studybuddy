@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html>
 
+	<header>
+		<link rel="stylesheet" href="style2.css" type="text/css"/>
+	</header>
+
 	<body>
+		<script>
+		var list = new Array();
+		var text = document.getElementById("banned_url");
+		function insert(){
+			//alert("insert works");
+			if (text.indexOf('.') != -1){
+				list.push(document.getElementById("banned_url").value);
 
-		<h1> BLACKLIST </h1>
+			}
+			showUrl();
+		}
 
-		<!-- <form> -->
-		<input type="text" id="banned_url">
+		function remove(){
+			var index = list.indexOf(text);
+			if (index > - 1){
+				list.splice(index, 1);
+			}
+			showUrl();
 
-		<button onclick = "insert()">
+		}
+
+		function showUrl(){
+			document.getElementById("showList").innerHTML = list.toString();
+		}
+		</script>
+
+		<div class="head">
+			<span id="title">STUDY BUDDY</span>
+			<img align="right" class="logo" src="SBinterface/logo.png">
+		</div>
+
+		<div class="body">
+
+			<h3> BLACKLIST </h3>
+
+			<!-- <form> -->
+			<input type="text" id="banned_url">
+
+<<<<<<< HEAD
+			<button onclick = "insert()">
+			+ </button> <!-- INSERT BUTTON -->
+
+			<button onclick = "remove()">
+			- </button> <!-- DELETE BUTTON -->
+=======
+		<button onclick = "insert()" id="insert_button">
 		+ </button> <!-- INSERT BUTTON -->
 
-		<button onclick = "remove()">
+		<button onclick = "remove()" id="remove_button">
 		- </button> <!-- DELETE BUTTON -->
+>>>>>>> origin/master
 
-		<p id="showList"></p>
+			<p id="showList"></p>
 
+		</div>
 
 		<!-- </form> -->
 
@@ -33,5 +78,5 @@
 	  firebase.initializeApp(config);
 	</script>
 	<script type="text/javascript" src="firebase.js"></script>
-	<script src = "blacklist.js"></script>
+	<!--<script src = "blacklist.js"></script>-->
 </html>
