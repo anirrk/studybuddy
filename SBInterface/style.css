@@ -37,7 +37,7 @@ input[type=text] {
 	width: 60px;
 	height: 60px;
 	border-radius: 3px;
-	border-color: blue;
+	border-color: #d0d8d5;
 }
 
 input[type=text]:focus {
