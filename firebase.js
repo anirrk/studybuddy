@@ -13,9 +13,10 @@ firebase.initializeApp(config);
 var blacklist_input = document.getElementById("banned_url");
 var insert_button = document.getElementById('insert_button');
 var remove_button = document.getElementById('remove_button');
+var refreshList = document.getElementById('refreshList');
 
 var firebaseRef = firebase.database().ref();
-var firebaseRefB = firebase.database().ref('blacklist');
+var firebaseRefB = firebase.database().ref("blacklist");
 var double = false;
 //const ulList = document.getElementById('list');
 const ulList2 = document.getElementById('listTemp');
@@ -25,7 +26,7 @@ var text = document.getElementById("banned_url");
 var childData = new Array();
 //var derp = [1, 2, 3];
 showUrl();
-accessData();
+//accessData();
 showArray();
 
 
@@ -61,12 +62,12 @@ remove_button.addEventListener('click',function(){
 
 
 	var index = list.indexOf(blacklist_input.value);
-	if (index != - 1){
+	if (index !== - 1){
 		list.splice(index, 1);
 	}
 	
 	firebaseRefB.orderByValue().equalTo(blacklist_input).on('child_added', function(snapshot) {
-  	snapshot.ref().remove();
+  	snapshot.firebaseRefB.remove();
 	});
 	
 	showUrlTemp();
@@ -90,15 +91,16 @@ function showUrl(){
 	
 }
 
-/*function showArray(){
+function showArray(){
 
 	for (var i = 0; i < childData.length; i++){
+		
 		var item = document.createElement("li2");
     	item.appendChild(document.createTextNode(childData[i]));
     	ulList2.appendChild(item);
 		
 	}
-}*/
+}
 
 function showUrlTemp(){
 	document.getElementById("showList").innerHTML = "";
@@ -108,15 +110,22 @@ function showUrlTemp(){
 		}
 
 }
-
-function accessData(){
+refreshList.addEventListener('click', function() {
 	firebaseRef.child('blacklist').once('value', function(snapshot) {
   		snapshot.forEach(function(childSnapshot) {
-    		//var childKey = childSnapshot.key();
-    		childData = childSnapshot.val();
+    		childData = Snapshot.val();
+		});
+  	})
+  	showArray();
+});
+
+/*function accessData(){
+	firebaseRef.child('blacklist').once('value', function(snapshot) {
+  		snapshot.forEach(function(childSnapshot) {
+    		childData = Snapshot.val();
   });
 });
-} 
+} */
 
 // insert_button.addEventListener('click',function(){
 // 	var value = blacklist_input.value;
