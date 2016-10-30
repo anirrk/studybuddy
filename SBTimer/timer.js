@@ -25,34 +25,65 @@ firebaseRef.on("value", function(snapshot) {
 	ChillHours = parseInt(snapshot.child("CTimeHours").val());
 	ChillMinutes = parseInt(snapshot.child("CTimeMinutes").val());
 
-	var time = StudyHours * 60 * 60 + StudyMinutes * 60;
+	var timeStudy = StudyHours * 60 * 60 + StudyMinutes * 60;
+	var timeChill = ChillHours * 60 * 60 + ChillMinutes * 60;
 
-	function initializeClock() {
+	function initializeClockStudy() {
 		var interval = setInterval(function() {
-			var seconds = Math.floor((time % 60));
+			var seconds = Math.floor((timeStudy % 60));
 			if(seconds < 10) {
 				seconds = ('0' + seconds).slice(-2);
 			}
-			var minutes = Math.floor(((time/60) % 60));
+			var minutes = Math.floor(((timeStudy/60) % 60));
 			if(minutes < 10) {
 				minutes = ('0' + minutes).slice(-2);
 			}
-			var hours = Math.floor((((time/60)/60 % 24)));
+			var hours = Math.floor((((timeStudy/60)/60 % 24)));
 			if(hours < 10) {
 				hours = ('0' + hours).slice(-2);
 			}
-			document.getElementById("clock").innerHTML = hours + ':' + minutes + ':' + seconds;
-			if(time <= 0) {
+			document.getElementById("clockStudy").innerHTML = hours + ':' + minutes + ':' + seconds;
+			if(timeStudy <= 0) {
 				window.open(gif);
 				clearInterval(interval);
 				seconds = 0;
 				minutes = 0;
 				hours = 0;
 			}
-			time--;
+			timeStudy--;
 		}, 1000);
 	}
 
-	initializeClock();
+	function initializeClockChill() {
+		var interval = setInterval(function() {
+			var seconds = Math.floor((timeChill % 60));
+			if(seconds < 10) {
+				seconds = ('0' + seconds).slice(-2);
+			}
+			var minutes = Math.floor(((timeChill/60) % 60));
+			if(minutes < 10) {
+				minutes = ('0' + minutes).slice(-2);
+			}
+			var hours = Math.floor((((timeChill/60)/60 % 24)));
+			if(hours < 10) {
+				hours = ('0' + hours).slice(-2);
+			}
+			document.getElementById("clockChill").innerHTML = hours + ':' + minutes + ':' + seconds;
+			if(timeChill <= 0) {
+				window.open(gif);
+				clearInterval(interval);
+				seconds = 0;
+				minutes = 0;
+				hours = 0;
+			}
+			if(0) {
+				timeChill--;
+			}
+		}, 1000);
+	}
+
+	initializeClockStudy();
+	initializeClockChill();
+
 });
 

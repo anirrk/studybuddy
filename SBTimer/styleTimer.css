@@ -33,7 +33,13 @@ span {
 	font-size: 16px;
 }
 
-.timer {
+.timerStudy {
+	padding-left: 40px;
+	padding-top: 10px;
+	font-size: 40px;
+}
+
+.timerChill {
 	padding-left: 40px;
 	padding-top: 10px;
 	font-size: 40px;
