@@ -6,27 +6,8 @@
 	</header>
 
 	<body>
-		
-
-		<h1> BLACKLIST </h1>
-
-		<!-- <form> -->
-		<input type="text" id="banned_url">
-
-		<button onclick = "insert()" id="insert_button" value = "">
-		+ </button> <!-- INSERT BUTTON -->
-
-		<button onclick = "remove()" id="remove_button" value = "">
-		- </button> <!-- DELETE BUTTON -->
-
-		<p id="showList"></p>
 		<script>
 		var list = new Array();
-<<<<<<< HEAD
-=======
-
-
->>>>>>> origin/master
 		var text = document.getElementById("banned_url");
 		function insert(){
 			//alert("insert works");
@@ -49,15 +30,13 @@
 		}
 
 		function showUrl(){
-			document.getElementById("showList").innerHTML = list.toString();
+			//document.getElementById("showList").innerHTML = list.toString();
 			for (i = 0; i < list.length; i++){
-					document.write(list[i] + "<br >");
+					console.log(list[i]);
 			}
 		}
 		</script>
 
-<<<<<<< HEAD
-=======
 		<div class="head">
 			<span id="title">STUDY BUDDY</span>
 			<img align="right" class="logo" src="SBinterface/logo.png">
@@ -81,7 +60,6 @@
 
 		</div>
 
->>>>>>> origin/master
 		<!-- </form> -->
 
 	</body>
