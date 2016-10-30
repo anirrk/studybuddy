@@ -1,33 +1,38 @@
-var deadline = '04:00:00';
+var inputtedTime = '01:20:00';
 
-function findRemainingTime(deadline) {
-	// Get the time in milliseconds
-	var time = Date.parse(deadline) - Date.parse(new Date());
-	// Convert milliseconds to other units
-	var seconds = Math.floor((time/1000) % 60);
-	var minutes = Math.floor(((time/1000)/60) % 60);
-	var hours = Math.floor((((time/1000)/60)/60) % 24);
-	// Return the values
-	return {
-		'total': time,
-		'seconds': seconds,
-		'minutes': minutes,
-		'hours': hours
-	};
+function convertTime() {
+	var splitTime = inputtedTime.split(':');
+	return (+splitTime[0]) * 60 * 60 + (+splitTime[1]) * 60 + (+splitTime[2]);
 }
 
-function initializeClock(id, deadline) {
-	// Store reference to clock div
-	var clock = document.getElementById(id);
+var time = convertTime();
+
+function updateTime() {
+	time--;
+	return time;
+}
+
+function initializeClock() {
 	// Create function that finds time interval and prints it
 	var interval = setInterval(function() {
-		var time = findRemainingTime(deadline);
-		clock.innerHTML = 'days: ' + time.days + '<br>' +
-		'hours: ' + time.hours + '<br>' +
-		'minutes: ' + time.minutes + '<br>' +
-		'seconds: ' + time.seconds;
-		if(time.total <= 0) {
+		updateTime();
+		var seconds = Math.floor((time % 60));
+		if(seconds < 10) {
+			seconds = ('0' + seconds).slice(-2);
+		}
+		var minutes = Math.floor(((time/60) % 60));
+		if(minutes < 10) {
+			minutes = ('0' + minutes).slice(-2);
+		}
+		var hours = Math.floor((((time/60)/60 % 24)));
+		if(hours < 10) {
+			hours = ('0' + hours).slice(-2);
+		}
+		document.getElementById("clock").innerHTML = hours + ':' + minutes + ':' + seconds;
+		if(time <= 0) {
 			clearInterval(interval);
 		}
 	}, 1000)
 }
+
+initializeClock();
