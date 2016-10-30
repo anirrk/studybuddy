@@ -30,9 +30,10 @@
 		}
 
 		function showUrl(){
-			//document.getElementById("showList").innerHTML = list.toString();
-			for (i = 0; i < list.length; i++){
-					console.log(list[i]);
+			document.getElementById("showList").innerHTML = "";
+			for (var i = 0; i < list.length; i++){
+				document.getElementById("showList").innerHTML += list[i] + "<br>" ;
+				console.log(list[i]);
 			}
 		}
 		</script>
