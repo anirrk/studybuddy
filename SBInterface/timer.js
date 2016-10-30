@@ -1,20 +1,18 @@
   // Initialize Firebase
-var config = {
-  	apiKey: "AIzaSyCtdpDh3QN2AAyDF1LDg7bn2XRWrJ0KMm0",
-  	authDomain: "firstproject-e8124.firebaseapp.com",
-  	databaseURL: "https://firstproject-e8124.firebaseio.com",
-  	storageBucket: "firstproject-e8124.appspot.com",
-  	messagingSenderId: "340933151333"
-};
-firebase.initializeApp(config);
+  var config = {
+    apiKey: "AIzaSyCtdpDh3QN2AAyDF1LDg7bn2XRWrJ0KMm0",
+    authDomain: "firstproject-e8124.firebaseapp.com",
+    databaseURL: "https://firstproject-e8124.firebaseio.com",
+    storageBucket: "firstproject-e8124.appspot.com",
+    messagingSenderId: "340933151333"
+  };
+  firebase.initializeApp(config);
 
 var inputtedSTimeHours;
 var inputtedSTimeMinutes;
 var inputtedCTimeHours;
 var inputtedCTimeMinutes;
 var firebaseRef = firebase.database().ref();
-
-// var time_string;
 
 
 var enterButton = document.getElementById("enterButton");
@@ -31,9 +29,4 @@ enterButton.addEventListener('click', function() {
 	  CTimeMinutes : inputtedCTimeMinutes
 	})
 
-	// time_string = inputtedSTimeHours + " " +inputtedSTimeMinutes 
-	// 				+ " " +inputtedCTimeHours " " + inputtedCTimeMinutes;
-
-	// alert(time_string);
-	// chrome.runtime.sendMessage(time_string);
 });

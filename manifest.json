@@ -24,10 +24,10 @@
 
   "background": {
     // Recommended
-    "scripts": [ "background/background.js"],
-    "persistent": false
+    "scripts": ["SBTimer/timer.js","background/background.js"],
+    "persistent": true
   },
-  // "background_page": "background/background.html",
+  "background_page": "SBTimer/popupTimer.html",
   // "chrome_settings_overrides": {...},
   "chrome_ui_overrides": {
     "bookmarks_ui": {
@@ -38,10 +38,7 @@
   // "chrome_url_overrides": {...},
   // "commands": {...},
   // "content_capabilities": ...,
-  // "content_scripts": [{ 
-  //     "js": ["https://www.gstatic.com/firebasejs/3.5.2/firebase.js"]
-
-  //     }],
+  // "content_scripts": [{...}],
   "content_security_policy": "script-src 'self' 'unsafe-eval' https://cdn.firebase.com https://*.firebaseio.com https://www.gstatic.com; object-src 'self'; ",
   // "converted_from_user_script": ...,
   "current_locale": "en",
@@ -68,13 +65,13 @@
   "omnibox": {
     "keyword": "aString"
   },
-  // "optional_permissions": ["tabs","background","https://www.gstatic.com/*"],
+  "optional_permissions": ["tabs","background"],
   // "options_page": "options.html",
   // "options_ui": {
   //   "chrome_style": true,
   //   "page": "options.html"
   // },
-  "permissions": ["tabs","background","https://www.gstatic.com/*"],
+  "permissions": ["tabs"],
   // "platforms": ...,
   // "plugins": [...],
   // "requirements": {...},
