@@ -15,7 +15,6 @@ firebaseRef.on("value", function(snapshot) {
 	var time = StudyHours * 60 * 60 + StudyMinutes * 60;
 
 	function initializeClock() {
-		// Create function that finds time interval and prints it
 		var interval = setInterval(function() {
 			time--;
 			var seconds = Math.floor((time % 60));
@@ -34,7 +33,7 @@ firebaseRef.on("value", function(snapshot) {
 			if(time <= 0) {
 				clearInterval(interval);
 			}
-		}, 1000)
+		}, 1000);
 	}
 
 	initializeClock();
