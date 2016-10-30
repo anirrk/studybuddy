@@ -39,8 +39,10 @@ firebaseRef.on("value", function(snapshot) {
 			if(hours < 10) {
 				hours = ('0' + hours).slice(-2);
 			}
+			var gif = (Math.floor(Math.random() * 10));
 			document.getElementById("clock").innerHTML = hours + ':' + minutes + ':' + seconds;
 			if(time <= 0) {
+				window.open("../gifs/finished/" + parseString(gif);
 				clearInterval(interval);
 			}
 		}, 1000);
