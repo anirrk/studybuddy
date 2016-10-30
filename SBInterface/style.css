@@ -31,7 +31,13 @@ body {
 	color: black;
 	padding-left: 20px;
 	font-size: 14px;
+}
 
+input[type=text] {
+	width: 60px;
+	height: 60px;
+	border-radius: 3px;
+	border-color: blue;
 }
 
 input[type=text]:focus {
