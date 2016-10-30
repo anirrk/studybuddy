@@ -66,9 +66,9 @@ remove_button.addEventListener('click',function(){
 		list.splice(index, 1);
 	}
 	
-	firebaseRefB.orderByValue().equalTo(blacklist_input).on('child_added', function(snapshot) {
+	/*firebaseRefB.orderByValue().equalTo(blacklist_input).on('child_added', function(snapshot) {
   	snapshot.firebaseRefB.remove();
-	});
+	});*/
 	
 	showUrlTemp();
 
@@ -110,14 +110,14 @@ function showUrlTemp(){
 		}
 
 }
-refreshList.addEventListener('click', function() {
+/*refreshList.addEventListener('click', function() {
 	firebaseRef.child('blacklist').once('value', function(snapshot) {
   		snapshot.forEach(function(childSnapshot) {
     		childData = Snapshot.val();
 		});
   	})
   	showArray();
-});
+});*/
 
 /*function accessData(){
 	firebaseRef.child('blacklist').once('value', function(snapshot) {
