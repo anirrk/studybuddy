@@ -12,13 +12,18 @@ firebase.initializeApp(config);
 
 var blacklist_input = document.getElementById("banned_url");
 var insert_button = document.getElementById('insert_button');
+var remove_button = document.getElementById('remove_button');
+
 var firebaseRef = firebase.database().ref();
 var double = false;
 //const ulList = document.getElementById('list');
 
 var list = new Array();
 var text = document.getElementById("banned_url");
-function insert(){
+
+insert_button.addEventListener('click',function(){
+
+// function insert(){
 	//alert("insert works");
 	var value = blacklist_input.value;
 	for (var i = 0; i < list.length; i++){
@@ -36,16 +41,19 @@ function insert(){
 	document.getElementById("banned_url").value = ""; //empty the textbox
 	document.getElementById("banned_url").innerHTML = "";
 
-}
+// }
+});
 
-function remove(){
+remove_button.addEventListener('click',function(){
+
+
 	var index = list.indexOf(blacklist_input.value);
 	if (index != - 1){
 		list.splice(index, 1);
 	}
 	showUrl();
 
-}
+});
 
 function showUrl(){
 
