@@ -3,14 +3,14 @@
 
 	<body>
 		<script>
-		var list = new Array(10);
+		var list = new Array();
 		var text = document.getElementById("banned_url");
 		function insert(){
 			//alert("insert works");
-			if (text.indexOf('.') != -1){
+			//if (text.indexOf('.') != -1){
 				list.push(document.getElementById("banned_url").value);
 
-			}
+			//}
 			showUrl();
 		}
 
