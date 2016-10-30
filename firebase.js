@@ -83,7 +83,7 @@ function showUrl(){
 	
 }
 
-/*function showArray(){
+function showArray(){
 
 	for (var i = 0; i < childData.length; i++){
 		var node = document.createElement("LI");
@@ -92,7 +92,7 @@ function showUrl(){
     	document.getElementById("listTemp").appendChild(node);
 		
 	}
-}*/
+}
 
 function showUrlTemp(){
 	document.getElementById("showList").innerHTML = "";
