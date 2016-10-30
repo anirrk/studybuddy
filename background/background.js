@@ -39,13 +39,11 @@ function initializeClockStudy() {
 	var interval = setInterval(function() {
 
 			// timeStudy = 5;
-			setTimeout(function () {
 				var obj = {};
-				obj['studyTime'] = 5;
+				obj['studyTime'] = timeStudy;
 				chrome.storage.local.set(obj,function(){
 					console.log("studyTime in seconds is saving ");
 				});
-			}, 10000);
 			// chrome.storage.local.get('studyTime',function(result){
 			// 	alert(result.studyTime);
 			// });
@@ -67,21 +65,22 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
 	// 	StudyHours = items.STimeHours;
 	// 	console.log("local storage studyhours: " + StudyHours);
 	// });
+
 	if (message=="test") {
 	    // alert("message received");
 
-	    chrome.storage.sync.get('STimeHours', function(result){
+	    chrome.storage.local.get('STimeHours', function(result){
 	    	console.log(result);
 			StudyHours = result.STimeHours;
 			alert(StudyHours);
 		});
-		chrome.storage.sync.get('STimeMinutes',function(result){
+		chrome.storage.local.get('STimeMinutes',function(result){
 			StudyMinutes = result.STimeMinutes;
 		});
-		chrome.storage.sync.get('CTimeHours',function(result){
+		chrome.storage.local.get('CTimeHours',function(result){
 			ChillHours = result.CTimeHours;
 		});
-		chrome.storage.sync.get('CTimeMinutes',function(result){
+		chrome.storage.local.get('CTimeMinutes',function(result){
 			ChillMinutes = result.CTimeMinutes;
 		});
 

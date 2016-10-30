@@ -95,11 +95,13 @@ var timeStudy;
 
 chrome.runtime.onMessage.addListener(function(message, messageSender, sendResponse) {
 	console.log(message);
-	chrome.storage.local.get('studyTime', function(result){
-		timeStudy = result.studyTime;
-		console.log("this is the timeStudy in timer.js SBTImer: " + timeStudy);
-	});
+
 	
+	chrome.storage.local.get('STimeHours', function(result){
+	    	console.log(result);
+			StudyHours = result.STimeHours;
+			alert(StudyHours);
+		});
 	// initializeClockStudy();
 
 	var seconds = Math.floor((timeStudy % 60));

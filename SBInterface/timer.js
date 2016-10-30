@@ -31,7 +31,7 @@ enterButton.addEventListener('click', function() {
 	  CTimeMinutes : inputtedCTimeMinutes
 	})
 
-	// setTimeout(function () {
+	setTimeout(function () {
 			// Also storing google storage
 
 			// var obj = {};
@@ -44,11 +44,10 @@ enterButton.addEventListener('click', function() {
 		 //      		console.log("data", data);
 		 //    	});
 		    	var obj1 = {};
-		    	obj1['STimeHours'] = inputtedSTimeHours;
+		    	obj1['STimeHours'] = 5;
 		    	chrome.storage.local.set(obj1,function(){
 		    		console.log("studyTime in seconds is saving " + inputtedSTimeHours);
 		    	});
-
 
 
 		    	var obj2 = {};
@@ -68,6 +67,7 @@ enterButton.addEventListener('click', function() {
 		    	chrome.storage.local.set(obj4,function(){
 		    		console.log("studyTime in seconds is saving ");
 		    	});
+		    	
 			// });
 		 //    chrome.storage.local.get('STimeHours',function(items){
 		 //    	console.log("localstorage feedback" + items);
@@ -89,7 +89,7 @@ enterButton.addEventListener('click', function() {
 			//   		console.log("data", data);
 			// 	});
 			// });
-	// }, 10000);
+	}, 10000);
 	
 	chrome.extension.sendMessage("test");
 	// time_string = inputtedSTimeHours + " " +inputtedSTimeMinutes 
