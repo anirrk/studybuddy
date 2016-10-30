@@ -2,6 +2,8 @@ var inputtedSTimeHours;
 var inputtedSTimeMinutes;
 var inputtedCTimeHours;
 var inputtedCTimeMinutes;
+var firebaseRef = firebase.database().ref();
+
 
 var enterButton = document.getElementById("enterButton");
 enterButton.addEventListener('click', function() {
@@ -9,6 +11,20 @@ enterButton.addEventListener('click', function() {
 	inputtedSTimeMinutes = document.getElementById("studyInputMins").value;
 	inputtedCTimeHours = document.getElementById("chillInputHours").value;
 	inputtedCTimeMinutes = document.getElementById("chillInputMins").value;
+	
+	firebaseRef.child("storage").set({
+	  STimeHours: inputtedSTimeHours,
+	  STimeMinutes: inputtedSTimeMinutes,
+	  CTimeHours : inputtedCTimeHours,
+	  CTimeMinutes : inputtedCTimeMinutes
+	});
+
+
 });
 
-localStorage.setItem('favoriteflavor','vanilla');
+
+
+
+localStorage.setItem(Hours, inputtedSTimeHours);
+
+});
