@@ -43,15 +43,14 @@ chrome.extension.onMessage.addListener(function(message, messageSender, sendResp
 
 		var interval = setInterval(function() {
 			Stime--;
-			console.log(Stime);
 			// Ctime--;
 			Stemp = Stime+"";
 			// alert(Stemp);
 
 			// Ctemp = Ctime+"";
-			setCookie(ST,Stemp,1);
-			// setCookie(CT,Ctemp,1);
-			chrome.runtime.sendMessage('update_time'); 
+			setCookie("ST",Stemp,1);
+			// setCookie(CT,Ctemp,1); 
+            chrome.extension.sendMessage('update_time');
 		},1000);
 	}
 });

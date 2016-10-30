@@ -67,7 +67,7 @@ firebaseRef_blacklist.once("value", function(snapshot) {
     }
 });
 
-chrome.runtime.onMessage.addListener(function(message, messageSender, sendResponse) {
+chrome.extension.onMessage.addListener(function(message, messageSender, sendResponse) {
 
 	if(message == "update_time"){
 		var Stemp = getCookie("ST");
@@ -75,7 +75,6 @@ chrome.runtime.onMessage.addListener(function(message, messageSender, sendRespon
 
 		var Stime = parseInt(Stemp);
 		// var Ctime = parseInt(Ctemp);
-		alert(Stime);
 		var seconds = Math.floor((Stime % 60));
 		if(seconds < 10) {
 			seconds = ('0' + seconds).slice(-2);
