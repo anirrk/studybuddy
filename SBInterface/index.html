@@ -8,7 +8,8 @@
 
 	<body>
 		<div class="head">
-			<h1>STUDY BUDDY</h1>
+			<span id="title">STUDY BUDDY</span>
+			<img align="right" class="logo" src="logo.png">
 		</div>
 
 		<div class="inputs">
@@ -16,24 +17,29 @@
 				<form action="demo_form.asp">
 					<div>
 						<span>Study for:</span>
-						<input id="studyInput" type="text" name="studyInput"><br>
+						<input id="studyInput" type="text">
 						<span id="studyButton" class="button">Enter</span>
 					</div>
 
 					<div>
 						<span>Chill for:</span>
-						<input id="chillInput" type="text" name="chillInput"><br>
+						<input id="chillInput" type="text">
 						<span id="chillButton" class="button">Enter</span>
 					</div>
 
 					<h3>Blacklist:</h3>
+					<input id="blacklistInput" type="text">
+					<span id="blacklistAddButton" class="button">Add</span>
+					<div id="placeholder">
+					</div>
+
 	
 				</form>
 
 			</div>
 		</div>
 
-		<div class="startButton">
+		<div align="right">
 			<span class="button">LET'S STUDY</span>
 		</div>
 

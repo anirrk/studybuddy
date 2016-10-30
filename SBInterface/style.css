@@ -1,17 +1,30 @@
 body {
 	font-family: "Arial";
-	width: 400px;
+	width: 375px;
 	height: 500px;
 	margin: 0;
 }
 
-
+#title {
+	padding: 20px 0px 20px;
+	font-family: "Tahoma";
+	letter-spacing: 1px;
+}
 
 .head {
 	background-color: #25CD99;
 	padding: 5px 0px 3px 20px;
 	color: white;
-	font-size: 12px;
+	font-size: 23px;
+	box-shadow: 0px 2px 2px #d0d8d5;
+}
+
+.logo {
+	width: 55px;
+	height: 55px;
+	display: inline-block;
+	padding-right: 25px;
+	padding-top: 3px;
 }
 
 .inputs {
@@ -24,23 +37,25 @@ body {
 
 .button {
 	font-size: 12px;
-	padding: 5px;
+	padding: 5px 10px 5px 10px;
 	background-color: #d0d8d5;
 	display: inline-block;
 	border-radius: 2px;
+	cursor: pointer;
+	margin-left: 10px;
 }
 
-.startButton {
-	padding: 20px 20px 0px 0px;
-	text-align: right;
+.button:hover {
+	padding: 5px 13px 5px 13px;
+	transition: 0.5s;
+	background-color: black;
+	color: white;
 }
+
 
 span {
 	display:inline-block;
 	padding-top: 20px;
-}
-
-button{
-	display:inline-block;
+	font-weight: bold;
 }
 
