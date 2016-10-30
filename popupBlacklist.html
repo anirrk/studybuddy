@@ -11,10 +11,10 @@
 		var text = document.getElementById("banned_url");
 		function insert(){
 			//alert("insert works");
-			//if (text.indexOf('.') != -1){
+			if (document.getElementById("banned_url").value.indexOf('.') != -1){
 				list.push(document.getElementById("banned_url").value);
 
-			//}
+			}
 			showUrl();
 			document.getElementById("banned_url").value = "";
 			document.getElementById("banned_url").innerHTML = "";
