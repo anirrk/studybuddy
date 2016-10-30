@@ -49,6 +49,10 @@ function checkCookie() {
 }
 setCookie("flavor", "vanilla", 10);
 
+function convertTime(Hours, Mins) {
+	return parseInt(Hours) * 36000 + parseInt(Mins) * 60;
+}
+
 var enterButton = document.getElementById("enterButton");
 enterButton.addEventListener('click', function() {
 	inputtedSTimeHours = document.getElementById("studyInputHours").value;
@@ -68,6 +72,3 @@ enterButton.addEventListener('click', function() {
 
 });
 
-function convertTime(Hours, Mins) {
-	return parseInt(Hours) * 36000 + parseInt(Mins) * 60;
-}

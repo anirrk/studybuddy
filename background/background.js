@@ -35,6 +35,7 @@ function checkCookie() {
 
 chrome.extension.onMessage.addListener(function(message, messageSender, sendResponse) {
 	if(message == "trigger_background"){
+        alert("trigger_background works!");
 		var Stemp = getCookie("ST");
 		// var Ctemp = getCookie("CT");
 
@@ -54,5 +55,3 @@ chrome.extension.onMessage.addListener(function(message, messageSender, sendResp
 		},1000);
 	}
 });
-
-};

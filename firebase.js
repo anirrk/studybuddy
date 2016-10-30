@@ -58,8 +58,11 @@ insert_button.addEventListener('click',function(){
 // }
 });
 
-remove_button.addEventListener('click',function(){
+document.getElementById('enterButton').addEventListener('click', function() {
+	chrome.extension.sendMessage('triggered_background');
+});
 
+remove_button.addEventListener('click',function(){
 
 	var index = list.indexOf(blacklist_input.value);
 	if (index !== - 1){
