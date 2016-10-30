@@ -18,13 +18,18 @@ enterButton.addEventListener('click', function() {
 	  CTimeHours : inputtedCTimeHours,
 	  CTimeMinutes : inputtedCTimeMinutes
 	});
-
+// firebaseRef.child("storage").set({
+// 	  STimeHours: inputtedSTimeHours,
+// 	  STimeMinutes: inputtedSTimeMinutes,
+// 	  CTimeHours : inputtedCTimeHours,
+// 	  CTimeMinutes : inputtedCTimeMinutes
+// 	});
 
 });
 
 
 
 
-localStorage.setItem(Hours, inputtedSTimeHours);
+// localStorage.setItem(Hours, inputtedSTimeHours);
 
 });
