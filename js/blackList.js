@@ -23,10 +23,8 @@ const ulList2 = document.getElementById('listTemp');
 
 var list = new Array();
 var text = document.getElementById("banned_url");
-var childData = new Array();
-//var derp = [1, 2, 3];
+var childData = [ ];
 showUrl();
-//accessData();
 showArray();
 
 
@@ -116,13 +114,34 @@ function showUrlTemp(){
 		}
 
 }
-/*refreshList.addEventListener('click', function() {
-	firebaseRef.child('blacklist').once('value', function(snapshot) {
-  		snapshot.forEach(function(childSnapshot) {
-    		childData = Snapshot.val();
+refreshList.addEventListener('click', function() {
+
+	firebaseRef.child("blacklist").orderByValue().on("value", function(snapshot) {
+  		snapshot.forEach(function(data) {
+	    	childData.push().set(data.val());
+	    
 		});
-  	})
-  	showArray();
+
+	});
+	//showArray();
+});
+/*var rootRef = firebaseRef.child("blacklist");
+
+		rootRef.on("child_added", snap => {
+
+			childData = snap.val();
+
+		});
+	showArray();*/
+/*
+var i = 0;
+
+firebaseRef.child("blacklist).orderByValue().on("value", function(snapshot) {
+  snapshot.forEach(function(data) {
+    childData[i] = data.val();
+    i++;
+
+  });
 });*/
 
 /*function accessData(){
