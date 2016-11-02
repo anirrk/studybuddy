@@ -60,9 +60,9 @@ insert_button.addEventListener('click',function(){
 
 document.getElementById('enterButton').addEventListener('click', function() {
 	chrome.extension.sendMessage('triggered_background');
-	chrome.tabs.create({'url': chrome.extension.getURL('/SBTimer/popupTimer.html')}, function(tab) {
-        // Tab opened.
-    });
+	// chrome.tabs.create({'url': chrome.extension.getURL('3timer.html')}, function(tab) {
+ //        // Tab opened.
+ //    });
 });
 
 remove_button.addEventListener('click',function(){
