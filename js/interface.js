@@ -54,6 +54,7 @@ function convertTime(Hours, Mins) {
 }
 
 var enterButton = document.getElementById("enterButton");
+
 enterButton.addEventListener('click', function() {
 	inputtedSTimeHours = document.getElementById("studyInputHours").value;
 	inputtedSTimeMinutes = document.getElementById("studyInputMins").value;
