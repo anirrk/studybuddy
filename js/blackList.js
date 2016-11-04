@@ -1,5 +1,4 @@
-// initialize firebase
-// Initialize Firebase
+//Created by ethan-yu0503
 var config = {
   apiKey: "AIzaSyCtdpDh3QN2AAyDF1LDg7bn2XRWrJ0KMm0",
   authDomain: "firstproject-e8124.firebaseapp.com",
@@ -23,7 +22,7 @@ const ulList2 = document.getElementById('listTemp');
 
 var list = new Array();
 var text = document.getElementById("banned_url");
-var childData = [ ];
+var listData = [ ];
 showUrl();
 showArray();
 
@@ -31,21 +30,23 @@ showArray();
 insert_button.addEventListener('click',function(){
 
 	
-	var value = blacklist_input.value;
+	var website = blacklist_input.value;
 	for (var i = 0; i < list.length; i++){
-		if (document.getElementById("banned_url").value === list[i]){
+		if (website === list[i]){ //document.getElementById("banned_url").value = website
 			double = true;
 		}
 	}
 	for (var i = 0; i < childData.length; i++){
-		if (document.getElementById("banned_url").value === childData[i]){
+		if (website === listData[i]){
 			double = true;
 		}
 	}
 	
 	if (blacklist_input.value.indexOf('.') !== -1 &&
 		double === false){
-		list.push(document.getElementById("banned_url").value);
+		var last_period = website.lastIndexOf('.');
+		var first_period = website.lastIndexOf('.', last_period);
+		list.push(website.substr(first_period + 1));
 		firebaseRef.child("blacklist").push().set(value);
 
 	}
@@ -118,7 +119,7 @@ refreshList.addEventListener('click', function() {
 
 	firebaseRef.child("blacklist").orderByValue().on("value", function(snapshot) {
   		snapshot.forEach(function(data) {
-	    	childData.push().set(data.val());
+	    	listData.push().set(data.val());
 	    
 		});
 
