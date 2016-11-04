@@ -55,11 +55,40 @@ chrome.extension.onMessage.addListener(function(message, messageSender, sendResp
 	}
 });
 
-chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
-    var url = tabs[0].url;
-    alert(url);
-    for (var i = Things.length - 1; i >= 0; i--) {
-        Things[i]
-    };
-
+chrome.tabs.onActivated.addListener(function(activeInfo){
+    chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+        var url = tabs[0].url;
+        var processed_url = find_domain(url);
+    });
 });
+
+
+
+function find_domain(str){
+
+    var final_url;
+    last_period = str.lastIndexOf('.');
+    var i;
+    for ( i = last_period-1; i >= 0; i--) {
+        if((str[i]=='.')||(str[i]=='/') ){
+            i++;
+            break;
+        }
+    }
+    var j=last_period;
+    while((str[j] != '/' )&& (j != str.length-1) ){
+        j++;
+    }
+    final_url = str.substring(i,j);
+    return final_url;
+}
+
+
+
+
+
+
+
+
+
+

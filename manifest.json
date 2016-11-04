@@ -24,7 +24,7 @@
 
   "background": {
     // Recommended
-    "scripts": ["js/background.js" , "js/checkTab.js"],
+    "scripts": ["js/background.js"],
     "persistent": true
   },
   // "background_page": "background/background.html",

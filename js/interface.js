@@ -15,6 +15,10 @@ var inputtedCTimeMinutes;
 var firebaseRef = firebase.database().ref();
 var temp;
 
+
+
+
+
 // Testing cookies
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
