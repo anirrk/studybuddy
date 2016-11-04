@@ -30,7 +30,7 @@ load_data();
 
 
 insert_button.addEventListener('click',function(){
-
+	double = false;
 	
 	var website = blacklist_input.value;
 	for (var i = 0; i < list.length; i++){
@@ -38,12 +38,12 @@ insert_button.addEventListener('click',function(){
 			double = true;
 		}
 	}
-	/*for (var i = 0; i < listData.length; i++){
+	for (var i = 0; i < listData.length; i++){
 		if (website === listData[i]){
 			double = true;
 		}
 	}
-	*/
+	
 	
 	if (blacklist_input.value.indexOf('.') !== -1 &&
 		double === false){
@@ -141,7 +141,7 @@ function load_data(){
 	showArray();
 
 };
-
+/*
 chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
   if(message.method == "getWord"){
     //depending on how the word is stored you can do this in one of several ways
@@ -154,6 +154,7 @@ chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
     // Once we have the info we can just use sendResponse(word); like before
   }
 });
+*/
 
 /*
 function load_data2(){
