@@ -141,7 +141,7 @@ function load_data(){
 	showArray();
 
 };
-/*
+
 chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
   if(message.method == "getWord"){
     //depending on how the word is stored you can do this in one of several ways
@@ -154,7 +154,7 @@ chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
     // Once we have the info we can just use sendResponse(word); like before
   }
 });
-*/
+
 
 /*
 function load_data2(){
