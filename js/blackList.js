@@ -142,6 +142,19 @@ function load_data(){
 
 };
 
+chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
+  if(message.method == "getWord"){
+    //depending on how the word is stored you can do this in one of several ways
+    // 1. If it is a global variable, we can just return it directly
+    sendResponse(listData);
+    // 2. It needs to be retrieved asynchronously, in that case we do this
+    getWord(sendResponse);
+    return true;
+    // This passes the ability to reply to the function where we get the info
+    // Once we have the info we can just use sendResponse(word); like before
+  }
+});
+
 /*
 function load_data2(){
 	var rootRef = firebaseRef.child("blacklist");

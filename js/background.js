@@ -1,3 +1,5 @@
+var blackList_array;
+
 // Testing cookies
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -57,7 +59,9 @@ chrome.extension.onMessage.addListener(function(message, messageSender, sendResp
 
 chrome.runtime.sendMessage({method:"getWord"},function(response){
   //here response will be the word you want
-  console.log(response);
+    blackList_array = response;
+
+    alert(blackList_array[1]);
 });
 
 chrome.tabs.onActivated.addListener(function(activeInfo){
