@@ -1,4 +1,3 @@
-
 // Testing cookies
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -54,4 +53,13 @@ chrome.extension.onMessage.addListener(function(message, messageSender, sendResp
             chrome.extension.sendMessage('update_time');
 		},1000);
 	}
+});
+
+chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+    var url = tabs[0].url;
+    alert(url);
+    for (var i = Things.length - 1; i >= 0; i--) {
+        Things[i]
+    };
+
 });
