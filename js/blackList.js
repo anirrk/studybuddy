@@ -36,7 +36,7 @@ insert_button.addEventListener('click',function(){
 			double = true;
 		}
 	}
-	for (var i = 0; i < childData.length; i++){
+	for (var i = 0; i < listData.length; i++){
 		if (website === listData[i]){
 			double = true;
 		}
@@ -45,9 +45,10 @@ insert_button.addEventListener('click',function(){
 	if (blacklist_input.value.indexOf('.') !== -1 &&
 		double === false){
 		var last_period = website.lastIndexOf('.');
-		var first_period = website.lastIndexOf('.', last_period);
-		list.push(website.substr(first_period + 1));
-		firebaseRef.child("blacklist").push().set(value);
+		var first_period = website.lastIndexOf('.', last_period - 1);
+		var new_website = website.substring(first_period + 1);
+		list.push(new_website);
+		firebaseRef.child("blacklist").push().set(new_website);
 
 	}
 	showUrlTemp();
@@ -98,10 +99,10 @@ function showUrl(){
 
 function showArray(){
 
-	for (var i = 0; i < childData.length; i++){
+	for (var i = 0; i < listData.length; i++){
 		
 		var item = document.createElement("li2");
-    	item.appendChild(document.createTextNode(childData[i]));
+    	item.appendChild(document.createTextNode(listData[i]));
     	ulList2.appendChild(item);
 		
 	}
