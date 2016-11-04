@@ -22,10 +22,9 @@ const ulList2 = document.getElementById('listTemp');
 
 var list = new Array();
 var text = document.getElementById("banned_url");
-var listData = [ ];
+var listData = new Array();
 showUrl();
-load_data();
-showArray();
+load_data2();
 
 
 
@@ -38,11 +37,12 @@ insert_button.addEventListener('click',function(){
 			double = true;
 		}
 	}
-	for (var i = 0; i < listData.length; i++){
+	/*for (var i = 0; i < listData.length; i++){
 		if (website === listData[i]){
 			double = true;
 		}
 	}
+	*/
 	
 	if (blacklist_input.value.indexOf('.') !== -1 &&
 		double === false){
@@ -110,6 +110,8 @@ function showUrl(){
 
 function showArray(){
 
+	const ulList2 = document.getElementById('listTemp');
+
 	for (var i = 0; i < listData.length; i++){
 		
 		var item = document.createElement("li2");
@@ -127,16 +129,28 @@ function showUrlTemp(){
 		}
 
 }
-
+/*
 function load_data(){
 
-	firebaseRef.child("blacklist").orderByValue().on("value", function(snapshot) {
+	firebaseRef.child("blacklist").on("value", function(snapshot) {
   		snapshot.forEach(function(data) {
 	    	listData.push(data.val());
 		});
 	});
-	//showArray();
+	showArray();
 };
+*/
+
+function load_data2(){
+	var rootRef = firebaseRef.child("blacklist");
+
+		rootRef.on("child_added", snap => {
+
+			listData.push(snap.val());
+
+		});
+	showArray();
+}
 
 /*var rootRef = firebaseRef.child("blacklist");
 
