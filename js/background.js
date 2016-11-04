@@ -55,31 +55,42 @@ chrome.extension.onMessage.addListener(function(message, messageSender, sendResp
 	}
 });
 
+chrome.runtime.sendMessage({method:"getWord"},function(response){
+  //here response will be the word you want
+  console.log(response);
+});
+
 chrome.tabs.onActivated.addListener(function(activeInfo){
     chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
         var url = tabs[0].url;
         var processed_url = find_domain(url);
+        // alert(processed_url);
     });
 });
 
 
 
 function find_domain(str){
-
-    var final_url;
-    last_period = str.lastIndexOf('.');
+    var y = str.indexOf('/');
+    for (x = y+2; x <str.length; x++) {
+        if(str[x] == '/'){
+            break;
+        }
+    }
+    var sub_string = str.substring(y,x);
+    var last_period = sub_string.lastIndexOf('.');
     var i;
     for ( i = last_period-1; i >= 0; i--) {
-        if((str[i]=='.')||(str[i]=='/') ){
+        if((str[i] == '.')||(str[i]=='/') ){
             i++;
             break;
         }
     }
-    var j=last_period;
+    var j = last_period;
     while((str[j] != '/' )&& (j != str.length-1) ){
         j++;
     }
-    final_url = str.substring(i,j);
+    var final_url = str.substring(i,j);
     return final_url;
 }
 
