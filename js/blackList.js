@@ -24,7 +24,9 @@ var list = new Array();
 var text = document.getElementById("banned_url");
 var listData = [ ];
 showUrl();
+load_data();
 showArray();
+
 
 
 insert_button.addEventListener('click',function(){
@@ -74,7 +76,16 @@ remove_button.addEventListener('click',function(){
 	
 	/*firebaseRefB.orderByValue().equalTo(blacklist_input).on('child_added', function(snapshot) {
   	snapshot.firebaseRefB.remove();
-	});*/
+	});
+	//removing an element from firebase:
+
+	function removeItem(firebaseRef) {
+	  firebaseRef.remove(function(error) {
+	    alert(error ? "Uh oh!" : "Success!");
+	  });
+	}
+	*/
+
 	
 	showUrlTemp();
 
@@ -116,17 +127,17 @@ function showUrlTemp(){
 		}
 
 }
-refreshList.addEventListener('click', function() {
+
+function load_data(){
 
 	firebaseRef.child("blacklist").orderByValue().on("value", function(snapshot) {
   		snapshot.forEach(function(data) {
-	    	listData.push().set(data.val());
-	    
+	    	listData.push(data.val());
 		});
-
 	});
 	//showArray();
-});
+};
+
 /*var rootRef = firebaseRef.child("blacklist");
 
 		rootRef.on("child_added", snap => {
