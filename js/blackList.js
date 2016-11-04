@@ -24,7 +24,8 @@ var list = new Array();
 var text = document.getElementById("banned_url");
 var listData = new Array();
 showUrl();
-load_data2();
+load_data();
+//load_data2();
 
 
 
@@ -129,18 +130,19 @@ function showUrlTemp(){
 		}
 
 }
-/*
-function load_data(){
 
+function load_data(){
 	firebaseRef.child("blacklist").on("value", function(snapshot) {
   		snapshot.forEach(function(data) {
 	    	listData.push(data.val());
 		});
+
 	});
 	showArray();
-};
-*/
 
+};
+
+/*
 function load_data2(){
 	var rootRef = firebaseRef.child("blacklist");
 
@@ -151,6 +153,7 @@ function load_data2(){
 		});
 	showArray();
 }
+*/
 
 /*var rootRef = firebaseRef.child("blacklist");
 
