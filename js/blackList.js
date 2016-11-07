@@ -13,6 +13,7 @@ var blacklist_input = document.getElementById("banned_url");
 var insert_button = document.getElementById('insert_button');
 var remove_button = document.getElementById('remove_button');
 var refreshList = document.getElementById('refreshList');
+var enter_button = document.getElementById('enterButton');
 
 var firebaseRef = firebase.database().ref();
 var firebaseRefB = firebase.database().ref("blacklist");
@@ -61,11 +62,16 @@ insert_button.addEventListener('click',function(){
 // }
 });
 
-document.getElementById('enterButton').addEventListener('click', function() {
+enter_button.addEventListener('click', function() {
 	chrome.extension.sendMessage('triggered_background');
 	// chrome.tabs.create({'url': chrome.extension.getURL('3timer.html')}, function(tab) {
  //        // Tab opened.
  //    });
+	console.log("enter    button");
+    chrome.identity.getProfileUserInfo(function(userInfo){
+        console.log(userInfo.id);
+    });
+
 });
 
 remove_button.addEventListener('click',function(){
